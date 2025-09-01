@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-text: rgb(30, 41, 59);
+  --color-text-muted: rgb(100, 116, 139);
+  --color-teal: rgb(20, 184, 166);
+  --color-bg: rgb(236, 253, 245);
+  --font-font: Inter, sans-serif;
+}
