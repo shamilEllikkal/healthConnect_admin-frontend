@@ -54,7 +54,7 @@ const ManageUsers = () => {
       setUserList(users as unknown as User[] | null);
       return;
     }
-    const filteredUsers = users?.filter((user) =>
+    const filteredUsers = (users as unknown as User[])?.filter((user) =>
       user.name.toLowerCase().includes(query.toLowerCase())
     );
     setUserList(filteredUsers as unknown as User[] | null);
@@ -66,7 +66,7 @@ const ManageUsers = () => {
       setUserList(users as unknown as User[] | null);
       return;
     }
-    const filteredUsers = users?.filter((user) =>
+    const filteredUsers = (users as unknown as User[])?.filter((user) =>
       user.email.toLowerCase().includes(query.toLowerCase())
     );
     setUserList(filteredUsers as unknown as User[] | null);

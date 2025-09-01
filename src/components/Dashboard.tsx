@@ -42,7 +42,24 @@ const [appointmentList,setAppointmentList] = useState<appointment[] | null>(null
   }, [fetchAppointments]);
 
   useEffect(() => {
-    setAppointmentList(appointments);
+    // Transform the appointments data to match the appointment type
+    if (appointments) {
+      const formattedAppointments = appointments.map(app => {
+        if (typeof app === 'object' && app !== null) {
+          return app as unknown as appointment;
+        }
+        // Handle string data or other formats if needed
+        return {
+          doctor: 'Unknown',
+          date: 'Unknown',
+          time: 'Unknown',
+          hospital: 'Unknown'
+        };
+      });
+      setAppointmentList(formattedAppointments);
+    } else {
+      setAppointmentList(null);
+    }
   }, [ appointments]);
 
   return (

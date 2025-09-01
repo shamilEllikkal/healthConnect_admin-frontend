@@ -129,7 +129,7 @@ const AddDoctor = () => {
   }, [fetchDoctors]);
 
   useEffect(() => {
-    setDoctorList(doctors);
+    setDoctorList(doctors as Doctor[] | null);
   }, [doctors]);
 
   useEffect(() => {
@@ -253,7 +253,7 @@ const AddDoctor = () => {
                           rules={{ required: true }}
                           render={({ field }) => (
                             <Select
-                              {...field.value}
+                              {...field}
                               styles={{
                                 control: (baseStyles, state) => {
                                   // remove borderColor from baseStyles
@@ -347,7 +347,7 @@ const AddDoctor = () => {
                           rules={{ required: true }}
                           render={({ field }) => (
                             <Select
-                              {...field.value}
+                              {...field}
                               styles={{
                                 control: (baseStyles, state) => {
                                   // remove borderColor from baseStyles

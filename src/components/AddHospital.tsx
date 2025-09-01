@@ -9,7 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Select from "react-select";
 import * as yup from "yup";
-import { useForm, Controller, set } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useEffect, useState } from "react";
 import axios from "../axiosInstance";
@@ -233,7 +233,7 @@ const AddHospital = () => {
                           rules={{ required: true }}
                           render={({ field }) => (
                             <Select
-                              {...field.value}
+                              {...field}
                               styles={{
                                 control: (baseStyles, state) => {
                                   // remove borderColor from baseStyles

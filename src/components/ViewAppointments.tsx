@@ -13,7 +13,7 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import Select from "react-select";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { dataStore } from "../store/dataStore";
 
 const statusOptions = [{ value: "confirm", label: "confirm" }];
@@ -44,7 +44,7 @@ const ViewAppointments = () => {
   }, [fetchAppointments]);
 
   useEffect(() => {
-    setAppointmentList(appointments);
+    setAppointmentList(appointments as Appointment[] | null);
     console.log(appointments);
   }, [appointments]);
 
